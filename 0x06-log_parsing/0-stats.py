@@ -2,8 +2,8 @@
 """Log parsing module
     script that reads stdin line by line and computes metrics
 """
-#if __name__ == "__main__":
 import sys
+
 
 def print_stats(total_size, code_dict):
     """Method to print the log stats"""
@@ -27,12 +27,18 @@ code_dict = {
 
 try:
     for line in sys.stdin:
-        code = line.split()[-2]
-        size = line.split()[-1]
-        total_size += int(size)
+        try:
+            code = line.split()[-2]
+            if code in code_dict.keys():
+                code_dict[code] += 1
+        except BaseException:
+            pass
+        try:
+            size = line.split()[-1]
+            total_size += int(size)
+        except BaseException:
+            pass
         count += 1
-        if code in code_dict.keys():
-            code_dict[code] += 1
         if count == 10:
             print_stats(total_size, code_dict)
             count = 0
