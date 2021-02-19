@@ -6,8 +6,6 @@ UTF-8 validation module
 
 def validUTF8(data):
     """determines if a given data set represents a valid UTF-8 encoding"""
-    if data is None:
-        return False
     count = 0
     for c in data:
         if count == 0:
@@ -17,7 +15,7 @@ def validUTF8(data):
                 count = 2
             elif (c >> 3) == 0b11110:
                 count = 3
-            elif (c >> 7):
+            elif (c >> 7) != 0:
                 return False
         else:
             if (c >> 6) != 0b10:
