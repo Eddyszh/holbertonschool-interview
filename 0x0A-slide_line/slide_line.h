@@ -1,7 +1,6 @@
 #ifndef SLIDE_LINE_H
 #define SLIDE_LINE_H
 
-#include <stdio.h>
 #include <stdlib.h>
 
 #define SLIDE_LEFT 0
