@@ -1,4 +1,5 @@
 #include "slide_line.h"
+
 /**
  * slide_line - slides and merges an array of integers
  * @line: points to an array of integers containing size elements
@@ -28,7 +29,7 @@ int slide_line(int *line, size_t size, int direction)
 	}
 	else if (direction == SLIDE_RIGHT)
 	{
-		slide_rigth(line, size);
+		slide_right(line, size);
 		for (i = size - 1; i > 0 && line[i - 1] != 0; i--)
 		{
 			if (line[i - 1] == line[i])
@@ -39,7 +40,7 @@ int slide_line(int *line, size_t size, int direction)
 			}
 		}
 		if (temp)
-			slide_rigth(line, size);
+			slide_right(line, size);
 	}
 	else
 	{
@@ -49,11 +50,11 @@ int slide_line(int *line, size_t size, int direction)
 }
 
 /**
- * slide_rigth - slides the array to the rigth
+ * slide_right - slides the array to the right
  * @line: points to an array of integers containing size elements
  * @size: elements that must be slided
  */
-void slide_rigth(int *line, size_t size)
+void slide_right(int *line, size_t size)
 {
 	int temp, current = size - 1;
 
