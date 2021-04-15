@@ -13,7 +13,7 @@ def rain(walls):
     while (left < rigth):
         if walls[left] < walls[rigth]:
             low = walls[left]
-            left +=1
+            left += 1
         else:
             low = walls[rigth]
             rigth -= 1
