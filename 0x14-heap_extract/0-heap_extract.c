@@ -9,7 +9,7 @@ int heap_extract(heap_t **root)
 	int n, size, bit;
 	heap_t *node, *heap;
 
-	if (!heap || !*root)
+	if (!root || !*root)
 		return (0);
 	heap = *root;
 	n = heap->n;
